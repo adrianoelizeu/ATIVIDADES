@@ -1,0 +1,109 @@
+1. Faça um programa para ler o horário (hora, minuto e segundo) de início
+e a duração, em segundos, de uma experiência biológica. O programa
+deve informar o horário (hora, minuto e segundo) de termino da mesma.
+
+int main (void) {
+ int h_1, min_1, seg_1;
+ int h_2, min_2, seg_2;
+ int duracao;
+ printf("(hora/minuto/segundos): ");
+ scanf ("%d/%d/%d/", &h_1, &min_1, &seg_1);
+ printf ("\nduracao: ");
+ scanf ("%d", &duracao);
+ int segundos_i = h_1 * 3600 + min_1 * 60 + seg_1;
+ int segundos_f = seg_1 + duracao;
+ h_2 = segundos_f / 3600;
+ min_2 = (segundos_f % 3600) / 60;
+ seg_2 = (segundos_f % 3600) % 60;
+ printf("%d/%d/%d\n", h_2, min_2, seg_2);
+ return 0;
+}
+
+2. Ler um número inteiro e imprimir a soma do sucessor de seu triplo com
+o antecessor de seu dobro.
+
+int main (){
+
+ int numero, sucessor3x, antecessor2x, soma;
+ printf("DIGITE UM NÚMERO: ");
+ scanf("%d", &numero);
+ sucessor3x = ((numero*3)+1);
+ antecessor2x = ((numero*2)-1);
+ soma = (sucessor3x + antecessor2x);
+ printf("A SOMA DE SUCESSOR DE SEU TRIPLO DE %d COM O \n
+ANTECESSOR DO SEU DOBRO DE %d é %d", numero, numero, soma);
+ return 0;
+}
+
+3. Determine se um determinado ano lido é bissexto. Sendo que um ano
+é bissexto se for divisível por 400 ou se for divisível por 4 e não for divisível
+por 100. Por exemplo: 1988, 1992, 1996.
+
+int main () {
+ int ano;
+ printf("\nDIGITE UM ANO: ");
+ scanf("%d", &ano);
+
+ if (ano % 4 == 0 && (ano % 400 == 0 || ano % 100 != 0)) {
+ printf("\n==========ANO BISSEXTO==========\n");
+
+ }
+
+ else {
+ printf("\n==========ANO NÃO BISSEXTO==========\n");
+
+ }
+}
+
+4. Dados três valores, A, B, C, verificar se eles podem ser valores dos lados
+de um triângulo e, se forem se é um triângulo escaleno, um triângulo
+equilátero ou um triângulo isóscele. Considerando os seguintes conceitos:
+
+int main() {
+ int a, b, c;
+ printf("Digite primeiro valor: ");
+ scanf("%d", &a);
+ printf("Digite segundo valor: ");
+ scanf("%d", &b);
+ printf("Digite terceiro valor: ");
+ scanf("%d", &c);
+
+ if(a + b > c && a + c > b && b + c > a){
+ printf("Os 3 lados formam um triangulo ");
+ if(a == b && a == c)
+ printf("Equilatero\n");
+ else
+ if(a == b || a == c || b == c)
+ printf("Isosceles\n");
+ else
+ printf("Escaleno\n");
+ }
+ else
+ printf("Os 3 lados NAO formam um trinagulo ");
+}
+
+5. Dado n, calcular a soma dos n primeiros números inteiros positivos.
+int main() {
+ int n, soma;
+
+ printf("\n\nSOMA DOS PRIMEIROS INTEIROS POSITVOS\n");
+ printf("\nDigite o valor: ");
+ scanf("%d", &n);
+ soma = (n * (n + 1)) / 2;
+
+ printf("A soma dos %d primeiros inteiros positivos é %d\n", n, soma);
+
+ return 0;
+}
+
+7. Faça um programa que calcule o fatorial de um dado número inteiro
+positivo
+int main() {
+int fat, n;
+printf("Insira um valor para o qual deseja calcular seu fatorial: ");
+scanf("%d", &n);
+for(fat = 1; n > 1; n = n - 1)
+fat = fat * n;
+printf("\nFatorial calculado: %d", fat);
+return 0;
+}
